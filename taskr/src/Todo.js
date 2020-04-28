@@ -39,29 +39,41 @@ export default class Todo extends Component {
         let result;
         if (this.state.isEditing) {
             result = (
-                < div >
-                    <form htmlFor="task" onSubmit={this.handleUpdate}>
-                        <input
-                            type="text"
-                            value={this.state.task}
-                            name="task"
-                            id="task"
-                            onChange={this.handleChange} />
-                        <button>Save</button>
-                    </form>
-                </div >
-            )
+
+                <form className='Todo-edit-form' onSubmit={this.handleUpdate}>
+                    <input
+                        type='text'
+                        value={this.state.task}
+                        name='task'
+                        onChange={this.handleChange}
+                    />
+                    <button>Save</button>
+                </form>
+
+            );
         } else {
             result = (
-                <div>
-                    <button onClick={this.toggleForm}>Edit</button>
-                    <button onClick={this.handleRemove}>X</button>
-                    <li onClick={this.handleToggle} className={this.props.completed ? 'completed' : ''} >
-                        {this.props.task}
-                    </li>
-                </div>
-            )
+
+                <li className='Todo-task' onClick={this.handleToggle}>
+                    {this.props.task}
+                </li>
+
+            );
         }
-        return result;
+        return (
+            <div
+                className={this.props.completed ? "Todo completed" : "Todo"}
+            >
+                {result}
+                <div className='Todo-buttons'>
+                    <button onClick={this.toggleForm}>
+                        <i class='fas fa-pen' />
+                    </button>
+                    <button onClick={this.handleRemove}>
+                        <i class='fas fa-trash' />
+                    </button>
+                </div>
+            </div>
+        );
     }
 }

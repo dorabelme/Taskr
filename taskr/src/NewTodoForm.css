@@ -15,12 +15,18 @@
   padding: 0 1.5em;
   font-size: initial;
   outline: none;
+  color: black;
 }
+
+.NewTodoForm ::placeholder {
+  color: black;
+}
+
 .NewTodoForm button {
   padding: 0 1.3rem;
   border: none;
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
+  background-color: #f9e79f;
+  color: black;
   text-transform: uppercase;
   font-weight: bold;
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -30,7 +36,7 @@
   outline: none;
 }
 .NewTodoForm button:hover {
-  background: rgba(0, 0, 0, 0.1);
+  background: #f7dc6f;
 }
 .NewTodoForm input,
 .NewTodoForm button {

@@ -4,19 +4,23 @@
   padding: 1.1rem 3rem;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.1);
+  background: #f9e79f;
 }
 
 .Todo-task {
   position: relative;
   transition: opacity 0.4s linear;
 }
-
-.Todo-task.completed {
-  opacity: 0.6;
+.Todo.completed {
+  transition: opacity 300ms ease-in-out;
+  transition-delay: 200ms;
+  opacity: 0.5;
 }
 
-.Todo-task.completed:before {
+.Todo.completed .Todo-task {
+  /* opacity: 0.6; */
+}
+.Todo.completed .Todo-task:before {
   content: '';
   position: absolute;
   top: 50%;
@@ -24,8 +28,8 @@
   display: block;
   width: 0%;
   height: 2px;
-  background: #fff;
-  animation: strikeitem 0.5s ease-out 0s forwards;
+  background: black;
+  animation: strikeitem 0.3s ease-in 0s forwards;
 }
 
 @keyframes strikeitem {
@@ -71,7 +75,7 @@
 .Todo-edit-form button {
   padding: 0 1.3rem;
   border: none;
-  background: #ff6666;
+  background: #909497;
   color: white;
   text-transform: uppercase;
   font-weight: bold;
@@ -82,7 +86,7 @@
 }
 
 .Todo-edit-form button:hover {
-  background: #ff5e5e;
+  background: #626567;
 }
 
 .Todo-edit-form input,

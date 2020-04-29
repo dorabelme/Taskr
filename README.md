@@ -8,7 +8,7 @@ A Simple React Todo App built with class components.
 ## Short demo:
 
 <p align ="center">
-<img src="./taskr.gif" alt="Taskr app example">
+<img src="./taskr1.gif" alt="Taskr app example">
 </p>
 
 ## Installation
